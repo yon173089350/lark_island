@@ -11,7 +11,6 @@ import lombok.extern.log4j.Log4j2;
 @ApplicationScoped
 @Log4j2
 public class App {
-
     private final JobFactory jobFactory;
 
     @Inject
