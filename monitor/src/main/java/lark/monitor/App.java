@@ -1,11 +1,11 @@
-package larkisland.monitor;
+package lark.monitor;
 
 import io.quarkus.runtime.StartupEvent;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
-import larkisland.monitor.job.JobFactory;
+import lark.monitor.job.JobFactory;
 import lombok.extern.log4j.Log4j2;
 
 @ApplicationScoped

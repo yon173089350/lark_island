@@ -1,4 +1,4 @@
-package larkisland.monitor.job;
+package lark.monitor.job;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
