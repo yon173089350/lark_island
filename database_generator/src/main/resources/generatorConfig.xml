@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE generatorConfiguration
-        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <context id="context" targetRuntime="MyBatis3Simple">
         <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>
-        
+
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
@@ -19,7 +18,8 @@
 
         <sqlMapGenerator targetPackage="lark.database.mapper" targetProject="../database/src/main/resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="lark.database.mapper" targetProject="../database/src/main/java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="lark.database.mapper"
+                             targetProject="../database/src/main/java"/>
 
         <table tableName="monitor_job" schema="public"/>
 

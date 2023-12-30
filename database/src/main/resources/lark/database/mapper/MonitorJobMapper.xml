@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="lark.database.mapper.MonitorJobMapper">
-  <resultMap id="BaseResultMap" type="lark.database.model.MonitorJob">
-    <id column="job_id" jdbcType="VARCHAR" property="jobId" />
-    <result column="cron" jdbcType="VARCHAR" property="cron" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from public.monitor_job
-    where job_id = #{jobId,jdbcType=VARCHAR}
-  </delete>
-  <insert id="insert" parameterType="lark.database.model.MonitorJob">
-    insert into public.monitor_job (job_id, cron)
-    values (#{jobId,jdbcType=VARCHAR}, #{cron,jdbcType=VARCHAR})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="lark.database.model.MonitorJob">
-    update public.monitor_job
-    set cron = #{cron,jdbcType=VARCHAR}
-    where job_id = #{jobId,jdbcType=VARCHAR}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select job_id, cron
-    from public.monitor_job
-    where job_id = #{jobId,jdbcType=VARCHAR}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select job_id, cron
-    from public.monitor_job
-  </select>
+    <resultMap id="BaseResultMap" type="lark.database.model.MonitorJob">
+        <id column="job_id" jdbcType="VARCHAR" property="jobId"/>
+        <result column="cron" jdbcType="VARCHAR" property="cron"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from public.monitor_job
+        where job_id = #{jobId,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="lark.database.model.MonitorJob">
+        insert into public.monitor_job (job_id, cron)
+        values (#{jobId,jdbcType=VARCHAR}, #{cron,jdbcType=VARCHAR})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="lark.database.model.MonitorJob">
+        update public.monitor_job
+        set cron = #{cron,jdbcType=VARCHAR}
+        where job_id = #{jobId,jdbcType=VARCHAR}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select job_id, cron
+        from public.monitor_job
+        where job_id = #{jobId,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select job_id, cron
+        from public.monitor_job
+    </select>
 </mapper>
