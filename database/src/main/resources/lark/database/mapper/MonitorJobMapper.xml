@@ -17,11 +17,6 @@
     from monitor_job
     where job_id = #{jobId,jdbcType=VARCHAR}
   </select>
-  <select id="selectByPrimaryKeySkipLocked" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select job_id, cron, trigger_time
-    from monitor_job
-    where job_id = #{jobId,jdbcType=VARCHAR} skip locked
-  </select>
   <select id="selectAll" resultMap="BaseResultMap">
     select job_id, cron, trigger_time
     from monitor_job
