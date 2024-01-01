@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lark.database.mapper.MonitorJobMapper">
+  <resultMap id="BaseResultMap" type="lark.database.model.MonitorJob">
+    <id column="job_id" jdbcType="VARCHAR" property="jobId" />
+    <result column="cron" jdbcType="VARCHAR" property="cron" />
+    <result column="trigger_time" jdbcType="TIMESTAMP" property="triggerTime" />
+  </resultMap>
+  <update id="updateByPrimaryKey" parameterType="lark.database.model.MonitorJob">
+    update monitor_job
+    set cron = #{cron,jdbcType=VARCHAR},
+      trigger_time = #{triggerTime,jdbcType=TIMESTAMP}
+    where job_id = #{jobId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select job_id, cron, trigger_time
+    from monitor_job
+    where job_id = #{jobId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKeySkipLocked" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select job_id, cron, trigger_time
+    from monitor_job
+    where job_id = #{jobId,jdbcType=VARCHAR} skip locked
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select job_id, cron, trigger_time
+    from monitor_job
+  </select>
+</mapper>
