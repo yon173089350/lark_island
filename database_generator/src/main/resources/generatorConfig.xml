@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <context id="context" targetRuntime="MyBatis3Simple">
+    <context id="simple" targetRuntime="MyBatis3Simple">
         <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>
 
         <commentGenerator>
@@ -21,7 +21,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="lark.database.mapper"
                              targetProject="../database/src/main/java"/>
 
-        <table tableName="monitor_job" schema="public"/>
+        <table tableName="monitor_job" enableDeleteByExample="false" enableDeleteByPrimaryKey="false" enableInsert="false"/>
 
     </context>
 </generatorConfiguration>
