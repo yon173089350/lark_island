@@ -24,9 +24,9 @@ class DatastoreFactoryTest {
                     "    country_code CHARACTER VARYING," +
                     "    cron_json CHARACTER VARYING," +
                     "    once_per_duration CHARACTER VARYING," +
-                    "    hold_start_time TIMESTAMP," +
-                    "    hold_end_time TIMESTAMP," +
-                    "    last_trig_time TIMESTAMP" +
+                    "    hold_start_time TIMESTAMP WITH TIME ZONE," +
+                    "    hold_end_time TIMESTAMP WITH TIME ZONE," +
+                    "    last_trig_time TIMESTAMP WITH TIME ZONE" +
                     ")");
         } catch (SQLException e) {
             throw new RuntimeException(e);
