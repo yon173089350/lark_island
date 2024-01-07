@@ -3,22 +3,32 @@
 <mapper namespace="lark.database.mapper.MonitorJobMapper">
   <resultMap id="BaseResultMap" type="lark.database.model.MonitorJob">
     <id column="job_id" jdbcType="VARCHAR" property="jobId" />
-    <result column="cron" jdbcType="VARCHAR" property="cron" />
-    <result column="trigger_time" jdbcType="TIMESTAMP" property="triggerTime" />
+    <result column="country_code" jdbcType="VARCHAR" property="countryCode" />
+    <result column="cron_json" jdbcType="VARCHAR" property="cronJson" />
+    <result column="once_per_duration" jdbcType="VARCHAR" property="oncePerDuration" />
+    <result column="hold_start_time" jdbcType="TIMESTAMP" property="holdStartTime" />
+    <result column="hold_end_time" jdbcType="TIMESTAMP" property="holdEndTime" />
+    <result column="last_trig_time" jdbcType="TIMESTAMP" property="lastTrigTime" />
   </resultMap>
   <update id="updateByPrimaryKey" parameterType="lark.database.model.MonitorJob">
     update monitor_job
-    set cron = #{cron,jdbcType=VARCHAR},
-      trigger_time = #{triggerTime,jdbcType=TIMESTAMP}
+    set country_code = #{countryCode,jdbcType=VARCHAR},
+      cron_json = #{cronJson,jdbcType=VARCHAR},
+      once_per_duration = #{oncePerDuration,jdbcType=VARCHAR},
+      hold_start_time = #{holdStartTime,jdbcType=TIMESTAMP},
+      hold_end_time = #{holdEndTime,jdbcType=TIMESTAMP},
+      last_trig_time = #{lastTrigTime,jdbcType=TIMESTAMP}
     where job_id = #{jobId,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select job_id, cron, trigger_time
+    select job_id, country_code, cron_json, once_per_duration, hold_start_time, hold_end_time, 
+    last_trig_time
     from monitor_job
     where job_id = #{jobId,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select job_id, cron, trigger_time
+    select job_id, country_code, cron_json, once_per_duration, hold_start_time, hold_end_time, 
+    last_trig_time
     from monitor_job
   </select>
 </mapper>
