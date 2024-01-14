@@ -21,7 +21,7 @@ class DatastoreFactoryTest {
             stmt.execute("CREATE TABLE monitor_job" +
                     "(" +
                     "    job_id CHARACTER VARYING," +
-                    "    country_code CHARACTER VARYING," +
+                    "    country_region_code CHARACTER VARYING," +
                     "    cron_json CHARACTER VARYING," +
                     "    once_per_duration CHARACTER VARYING," +
                     "    hold_start_time TIMESTAMP WITH TIME ZONE," +

@@ -6,18 +6,18 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
 import lark.database.util.DatastoreFactory;
-import lark.monitor.job.JobFactory;
+import lark.monitor.job.JobManager;
 import lombok.extern.log4j.Log4j2;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 @ApplicationScoped
 @Log4j2
 public class App {
-    private final JobFactory jobFactory;
+    private final JobManager jobManager;
 
     @Inject
-    public App(JobFactory jobFactory) {
-        this.jobFactory = jobFactory;
+    public App(JobManager jobManager) {
+        this.jobManager = jobManager;
     }
 
     @ConfigProperty(name = "DB_URL")
@@ -35,6 +35,6 @@ public class App {
     void onStart(@Observes StartupEvent ev) {
         log.info("Init App: {}", ev.toString());
         DatastoreFactory.init(jdbcUrl, username, password, driverClassName);
-        jobFactory.init();
+        jobManager.init();
     }
 }

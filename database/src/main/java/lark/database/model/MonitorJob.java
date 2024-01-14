@@ -9,7 +9,7 @@ import lombok.Data;
 public class MonitorJob {
     private String jobId;
 
-    private String countryCode;
+    private String countryRegionCode;
 
     private String cronJson;
 
