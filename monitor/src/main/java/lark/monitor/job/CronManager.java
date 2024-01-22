@@ -8,46 +8,31 @@ import jakarta.inject.Inject;
 import lark.database.mapper.MonitorJobMapper;
 import lark.database.model.MonitorJob;
 import lark.database.util.DatastoreFactory;
-import lark.monitor.model.MonitorJobBO;
 import lombok.extern.log4j.Log4j2;
 import org.apache.ibatis.session.SqlSession;
-import org.quartz.SchedulerException;
 
-import java.time.ZoneId;
 import java.util.*;
 
 @ApplicationScoped
 @Log4j2
-public class JobManager {
+public class CronManager {
     private final Scheduler scheduler;
 
     private final Gson gson = new Gson();
 
-    private final Map<String, MonitorJobBO> jobMap = new HashMap<>();
-
     @Inject
-    public JobManager(Scheduler scheduler) {
+    public CronManager(Scheduler scheduler) {
         this.scheduler = scheduler;
     }
 
     public void init() {
-
         initScheduler();
-
     }
 
     private void initScheduler() {
         try (SqlSession session = DatastoreFactory.openSession()) {
             MonitorJobMapper mapper = session.getMapper(MonitorJobMapper.class);
-            for (MonitorJob monitorJob : mapper.selectAll()) {
-                MonitorJobBO job = MonitorJobBO.builder().jobId(monitorJob.getJobId())
-                        .countryRegionCode(monitorJob.getCountryRegionCode())
-                        .cronList(convertJson2CronList(monitorJob.getCronJson()))
-                        .zoneId(ZoneId.systemDefault())
-                        .build();
-                jobMap.put(job.getJobId(), job);
-                add2Scheduler(job);
-            }
+            mapper.selectAll().forEach(this::add2Scheduler);
         }
     }
 
@@ -56,18 +41,14 @@ public class JobManager {
         }.getType());
     }
 
-    private void add2Scheduler(MonitorJobBO job) {
-        job.getCronList().forEach(cron -> {
-            scheduler.newJob(job.getJobId())
-                    .setCron(cron)
-                    .setTask(executionContext -> {
-                        log.info("Cron: {}, {}", cron,new Date());
-                    })
+    private void add2Scheduler(MonitorJob job) {
+        List<String> list = convertJson2CronList(job.getCronJson());
+        for (int i = 0; i < list.size(); i++) {
+            scheduler.newJob(String.join("_", job.getJobId(), job.getCountryRegionCode(), String.valueOf(i)))
+                    .setCron(list.get(i))
+                    .setTask(executionContext -> new CronJob(job.getJobId(), job.getCountryRegionCode()).run())
                     .schedule();
-        });
+        }
         log.info(scheduler.getScheduledJobs());
-
     }
-
-
 }

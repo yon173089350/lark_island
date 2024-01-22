@@ -23,7 +23,12 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="lark.database.mapper"
                              targetProject="../database/src/main/java"/>
 
-        <table tableName="monitor_job" enableDeleteByExample="false" enableDeleteByPrimaryKey="false" enableInsert="false"/>
+        <table tableName="monitor_job" enableDeleteByExample="false" enableDeleteByPrimaryKey="false"
+               enableInsert="false">
+            <columnOverride column="hold_start_time" jdbcType="TIMESTAMP" javaType="java.time.OffsetDateTime"/>
+            <columnOverride column="hold_end_time" jdbcType="TIMESTAMP" javaType="java.time.OffsetDateTime"/>
+            <columnOverride column="last_trig_time" jdbcType="TIMESTAMP" javaType="java.time.OffsetDateTime"/>
+        </table>
 
     </context>
 </generatorConfiguration>

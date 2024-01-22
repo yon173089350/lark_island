@@ -26,6 +26,11 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
+            <groupId>lark</groupId>
+            <artifactId>util</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-health</artifactId>
         </dependency>
@@ -66,6 +71,7 @@
             <version>3.2.3</version>
             <scope>test</scope>
         </dependency>
+
 
     </dependencies>
 

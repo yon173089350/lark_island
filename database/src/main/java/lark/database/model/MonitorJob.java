@@ -1,6 +1,6 @@
 package lark.database.model;
 
-import java.util.Date;
+import java.time.OffsetDateTime;
 import lombok.Builder;
 import lombok.Data;
 
@@ -15,9 +15,9 @@ public class MonitorJob {
 
     private String oncePerDuration;
 
-    private Date holdStartTime;
+    private OffsetDateTime holdStartTime;
 
-    private Date holdEndTime;
+    private OffsetDateTime holdEndTime;
 
-    private Date lastTrigTime;
+    private OffsetDateTime lastTrigTime;
 }

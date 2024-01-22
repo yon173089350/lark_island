@@ -39,10 +39,10 @@ class DatastoreFactoryTest {
             Assertions.assertNotNull(session);
             MonitorJobMapper mapper = session.getMapper(MonitorJobMapper.class);
             Assertions.assertNotNull(mapper.selectAll());
-            Assertions.assertNull(mapper.selectByPrimaryKey("NoData"));
+            Assertions.assertNull(mapper.selectByPrimaryKey("NoData", "NoData"));
+            Assertions.assertNull(mapper.selectByPrimaryKeySkipLocked("NoData", "NoData"));
             Assertions.assertEquals(0, mapper.updateByPrimaryKey(MonitorJob.builder().jobId("NoData").build()));
         }
     }
-
 
 }

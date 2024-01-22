@@ -49,6 +49,7 @@
 
     <modules>
         <module>database</module>
+        <module>util</module>
         <module>monitor</module>
     </modules>
 </project>
