@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>3.6.4</quarkus.version>
+        <quarkus.version>3.7.4</quarkus.version>
         <quarkus.package.type>uber-jar</quarkus.package.type>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler.source>21</maven.compiler.source>
