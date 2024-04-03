@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>3.7.4</quarkus.version>
+        <quarkus.version>3.9.1</quarkus.version>
         <quarkus.package.type>uber-jar</quarkus.package.type>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler.source>21</maven.compiler.source>
@@ -30,7 +30,7 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.30</version>
+                <version>1.18.32</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
