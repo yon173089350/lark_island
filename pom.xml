@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>3.9.1</quarkus.version>
+        <quarkus.version>3.11.0</quarkus.version>
         <quarkus.package.type>uber-jar</quarkus.package.type>
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <maven.compiler.source>21</maven.compiler.source>
@@ -36,7 +36,7 @@
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
-                <version>3.5.15</version>
+                <version>3.5.16</version>
             </dependency>
             <dependency>
                 <groupId>org.junit-pioneer</groupId>

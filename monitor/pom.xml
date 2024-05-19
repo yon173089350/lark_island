@@ -14,9 +14,9 @@
     <version>1.0.0</version>
 
     <properties>
-        <compiler-plugin.version>3.11.0</compiler-plugin.version>
-        <surefire-plugin.version>3.2.2</surefire-plugin.version>
-        <maven.jacoco.version>0.8.11</maven.jacoco.version>
+        <compiler-plugin.version>3.13.0</compiler-plugin.version>
+        <surefire-plugin.version>3.2.5</surefire-plugin.version>
+        <maven.jacoco.version>0.8.12</maven.jacoco.version>
     </properties>
 
     <dependencies>
