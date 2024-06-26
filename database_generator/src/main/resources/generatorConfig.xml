@@ -2,6 +2,8 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
+    <properties resource="jdbc.properties"/>
+
     <context id="simple" targetRuntime="MyBatis3Simple">
         <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin">
             <property name="builder" value="true"/>
@@ -14,7 +16,7 @@
         <jdbcConnection driverClass="org.postgresql.Driver"
                         connectionURL="jdbc:postgresql://127.0.0.1:5432/lark"
                         userId="lark"
-                        password="lark"/>
+                        password="${jdbc.password}"/>
 
         <javaModelGenerator targetPackage="lark.database.model" targetProject="../database/src/main/java"/>
 
