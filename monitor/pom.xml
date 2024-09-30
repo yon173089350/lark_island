@@ -15,7 +15,7 @@
 
     <properties>
         <compiler-plugin.version>3.13.0</compiler-plugin.version>
-        <surefire-plugin.version>3.2.5</surefire-plugin.version>
+        <surefire-plugin.version>3.5.0</surefire-plugin.version>
         <maven.jacoco.version>0.8.12</maven.jacoco.version>
     </properties>
 
@@ -68,7 +68,7 @@
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>3.2.5</version>
+            <version>3.5.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
