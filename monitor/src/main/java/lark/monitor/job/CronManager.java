@@ -50,5 +50,6 @@ public class CronManager {
                     .schedule();
         }
         log.info(scheduler.getScheduledJobs());
+        log.info("test");
     }
 }
