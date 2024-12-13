@@ -11,6 +11,5 @@
     </parent>
 
     <artifactId>util</artifactId>
-    <version>1.0.0</version>
 
 </project>

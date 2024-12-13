@@ -18,11 +18,11 @@
                         userId="lark"
                         password="${jdbc.password}"/>
 
-        <javaModelGenerator targetPackage="lark.database.model" targetProject="../database/src/main/java"/>
+        <javaModelGenerator targetPackage="lark.island.database.model" targetProject="../database/src/main/java"/>
 
-        <sqlMapGenerator targetPackage="lark.database.mapper" targetProject="../database/src/main/resources"/>
+        <sqlMapGenerator targetPackage="lark.island.database.mapper" targetProject="../database/src/main/resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="lark.database.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="lark.island.database.mapper"
                              targetProject="../database/src/main/java"/>
 
         <table tableName="monitor_job" enableDeleteByExample="false" enableDeleteByPrimaryKey="false"

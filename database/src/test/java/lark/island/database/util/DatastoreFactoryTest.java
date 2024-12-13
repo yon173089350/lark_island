@@ -1,7 +1,7 @@
-package lark.database.util;
+package lark.island.database.util;
 
-import lark.database.mapper.MonitorJobMapper;
-import lark.database.model.MonitorJob;
+import lark.island.database.mapper.MonitorJobMapper;
+import lark.island.database.model.MonitorJob;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;

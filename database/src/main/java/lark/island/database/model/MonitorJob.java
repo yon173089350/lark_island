@@ -1,4 +1,4 @@
-package lark.database.model;
+package lark.island.database.model;
 
 import java.time.OffsetDateTime;
 import lombok.Builder;

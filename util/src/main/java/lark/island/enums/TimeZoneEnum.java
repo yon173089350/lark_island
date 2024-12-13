@@ -1,4 +1,4 @@
-package lark.enums;
+package lark.island.enums;
 
 import java.time.ZoneId;
 

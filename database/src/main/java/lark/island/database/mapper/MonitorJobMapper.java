@@ -1,8 +1,8 @@
-package lark.database.mapper;
+package lark.island.database.mapper;
 
 import java.util.List;
 
-import lark.database.model.MonitorJob;
+import lark.island.database.model.MonitorJob;
 import org.apache.ibatis.annotations.Param;
 
 public interface MonitorJobMapper {

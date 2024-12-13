@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="lark.database.mapper.MonitorJobMapper">
-  <resultMap id="BaseResultMap" type="lark.database.model.MonitorJob">
+<mapper namespace="lark.island.database.mapper.MonitorJobMapper">
+  <resultMap id="BaseResultMap" type="lark.island.database.model.MonitorJob">
     <id column="job_id" jdbcType="VARCHAR" property="jobId" />
     <id column="country_region_code" jdbcType="VARCHAR" property="countryRegionCode" />
     <result column="cron_json" jdbcType="VARCHAR" property="cronJson" />
@@ -10,7 +10,7 @@
     <result column="hold_end_time" jdbcType="TIMESTAMP" property="holdEndTime" />
     <result column="last_trig_time" jdbcType="TIMESTAMP" property="lastTrigTime" />
   </resultMap>
-  <update id="updateByPrimaryKey" parameterType="lark.database.model.MonitorJob">
+  <update id="updateByPrimaryKey" parameterType="lark.island.database.model.MonitorJob">
     update monitor_job
     set cron_json = #{cronJson,jdbcType=VARCHAR},
       once_per_duration = #{oncePerDuration,jdbcType=VARCHAR},

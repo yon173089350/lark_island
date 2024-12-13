@@ -1,4 +1,4 @@
-package lark.database.util;
+package lark.island.database.util;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

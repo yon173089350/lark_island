@@ -1,11 +1,11 @@
-package lark.monitor;
+package lark.island.monitor;
 
 import io.quarkus.runtime.StartupEvent;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
-import lark.database.util.DatastoreFactory;
-import lark.monitor.job.CronManager;
+import lark.island.database.util.DatastoreFactory;
+import lark.island.monitor.job.CronManager;
 import lombok.extern.log4j.Log4j2;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
