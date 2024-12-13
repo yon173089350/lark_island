@@ -46,7 +46,7 @@ public class CronManager {
         for (int i = 0; i < list.size(); i++) {
             scheduler.newJob(String.join("_", job.getJobId(), job.getCountryRegionCode(), String.valueOf(i)))
                     .setCron(list.get(i))
-                    .setTask(executionContext -> new CronJob(job.getJobId(), job.getCountryRegionCode()).run())
+                    .setTask(_ -> new CronJob(job.getJobId(), job.getCountryRegionCode()).run())
                     .schedule();
         }
         log.info(scheduler.getScheduledJobs());
