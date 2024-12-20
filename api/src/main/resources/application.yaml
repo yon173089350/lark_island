@@ -1,3 +1,6 @@
 quarkus:
   banner:
     enabled: false
+  package:
+    jar:
+      type: uber-jar

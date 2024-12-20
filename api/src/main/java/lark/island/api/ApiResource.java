@@ -6,10 +6,8 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.HttpHeaders;
-import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lark.island.api.response.ApiResp;
 import lark.island.api.service.ApiService;
@@ -32,7 +30,6 @@ public class ApiResource {
 
     @Path("/{reqId}")
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
     public Response reqHandle(@PathParam("reqId") String reqId, @Context HttpHeaders httpHeaders, Object req) {
 
         Map<String, String> reqHdr = httpHeaders.getRequestHeaders().entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue().getFirst()));
