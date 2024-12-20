@@ -10,6 +10,10 @@
         <version>1.0.0</version>
     </parent>
 
+    <properties>
+        <mybatis-generator-lombok-plugin.version>1.4.2</mybatis-generator-lombok-plugin.version>
+    </properties>
+
     <artifactId>database_generator</artifactId>
 
     <build>
@@ -17,7 +21,7 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.4.2</version>
+                <version>${mybatis-generator-lombok-plugin.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.softwareloop</groupId>

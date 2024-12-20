@@ -30,7 +30,7 @@ public class DatastoreFactory {
         Environment environment = new Environment("data", transactionFactory, dataSource);
         Configuration configuration = new Configuration(environment);
         configuration.setLogImpl(Log4j2Impl.class);
-        configuration.addMappers("lark.database.mapper");
+        configuration.addMappers("lark.island.database.mapper");
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
     }
 
