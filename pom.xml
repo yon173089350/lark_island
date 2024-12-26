@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>3.17.4</quarkus.version>
+        <quarkus.version>3.17.5</quarkus.version>
         <postgresql.version>42.7.4</postgresql.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <surefire-plugin.version>3.5.2</surefire-plugin.version>

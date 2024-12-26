@@ -11,24 +11,24 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 @ApplicationScoped
 @Log4j2
-public class App {
+public class MonitorListener {
     private final CronManager cronManager;
 
     @Inject
-    public App(CronManager cronManager) {
+    public MonitorListener(CronManager cronManager) {
         this.cronManager = cronManager;
     }
 
-    @ConfigProperty(name = "DB_URL")
+    @ConfigProperty(name = "db.url")
     String jdbcUrl;
 
-    @ConfigProperty(name = "DB_USER")
+    @ConfigProperty(name = "db.user")
     String username;
 
-    @ConfigProperty(name = "DB_PW")
+    @ConfigProperty(name = "db.pw")
     String password;
 
-    @ConfigProperty(name = "DB_DRIVER")
+    @ConfigProperty(name = "db.driver")
     String driverClassName;
 
     void onStart(@Observes StartupEvent ev) {

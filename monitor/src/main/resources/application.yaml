@@ -1,0 +1,13 @@
+db:
+  url: jdbc:postgresql://127.0.0.1:5432/lark
+  user: lark
+  pw: lark
+  driver: org.postgresql.Driver
+quarkus:
+  scheduler:
+    start-mode: FORCED
+  banner:
+    enabled: false
+  package:
+    jar:
+      type: UBER_JAR

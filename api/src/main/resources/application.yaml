@@ -3,4 +3,4 @@ quarkus:
     enabled: false
   package:
     jar:
-      type: uber-jar
+      type: UBER_JAR
