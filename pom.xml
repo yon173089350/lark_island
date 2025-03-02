@@ -10,9 +10,9 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>3.17.5</quarkus.version>
-        <postgresql.version>42.7.4</postgresql.version>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <quarkus.version>3.19.1</quarkus.version>
+        <postgresql.version>42.7.5</postgresql.version>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <surefire-plugin.version>3.5.2</surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <java.version>23</java.version>
@@ -38,7 +38,7 @@
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis</artifactId>
-                <version>3.5.17</version>
+                <version>3.5.19</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
