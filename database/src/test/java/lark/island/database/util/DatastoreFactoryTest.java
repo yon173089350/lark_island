@@ -14,9 +14,14 @@ class DatastoreFactoryTest {
 
     @BeforeAll
     static void init() {
-        DatastoreFactory.init("jdbc:h2:mem:test", "sa", "sa", "org.h2.Driver");
-        try (SqlSession session = DatastoreFactory.openSession()) {
-            Statement stmt = session.getConnection().createStatement();
+
+        System.setProperty("connectionURL","jdbc:h2:mem:test");
+        System.setProperty("userId","sa");
+        System.setProperty("password","sa");
+        System.setProperty("driverClass","org.h2.Driver");
+        DatastoreFactory.init();
+        try (SqlSession session = DatastoreFactory.openSession();
+             Statement stmt = session.getConnection().createStatement()) {
             stmt.execute("DROP TABLE IF EXISTS monitor_job");
             stmt.execute("CREATE TABLE monitor_job" +
                     "(" +
