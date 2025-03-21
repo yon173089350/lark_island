@@ -10,10 +10,11 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>3.19.1</quarkus.version>
+        <quarkus.version>3.19.3</quarkus.version>
         <postgresql.version>42.7.5</postgresql.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <surefire-plugin.version>3.5.2</surefire-plugin.version>
+        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <java.version>23</java.version>
         <lombok.version>1.18.36</lombok.version>
@@ -53,7 +54,7 @@
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>3.5.2</version>
+            <version>${maven-failsafe-plugin.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -66,6 +67,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-to-slf4j</artifactId>
             <version>2.24.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.16.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
