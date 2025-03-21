@@ -16,12 +16,12 @@ import javax.sql.DataSource;
 public class DatastoreFactory {
     private static SqlSessionFactory sqlSessionFactory;
 
-    public static void init(String jdbcUrl, String username, String password, String driverClassName) {
+    public static void init() {
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl(jdbcUrl);
-        config.setUsername(username);
-        config.setPassword(password);
-        config.setDriverClassName(driverClassName);
+        config.setJdbcUrl(System.getProperty("connectionURL"));
+        config.setUsername(System.getProperty("userId"));
+        config.setPassword(System.getProperty("password"));
+        config.setDriverClassName(System.getProperty("driverClass"));
         config.setAutoCommit(false);
 
         DataSource dataSource = new HikariDataSource(config);
