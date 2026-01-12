@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <quarkus.version>3.30.2</quarkus.version>
+        <quarkus.version>3.30.6</quarkus.version>
         <postgresql.version>42.7.8</postgresql.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
@@ -73,13 +73,13 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-to-slf4j</artifactId>
-            <version>2.25.2</version>
+            <version>2.25.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.20.0</version>
+            <version>5.21.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
